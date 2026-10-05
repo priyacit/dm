@@ -3,171 +3,291 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Priyadharshini L. | Social Media Manager</title>
+    <title>Priyadharshini L. | Digital Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Visually Appealing Background Theme & Base Styles */
-        body {
+        :root {
+            --primary: #00f2fe;
+            --secondary: #4facfe;
+            --bg-dark: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * {
             margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(-45deg, #1a1a2e, #16213e, #0f3460, #e94560);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-            color: #ffffff;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(79, 172, 254, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(0, 242, 254, 0.15) 0px, transparent 50%);
+            background-attachment: fixed;
+            color: var(--text-main);
             line-height: 1.6;
-            padding: 0 20px;
         }
 
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        /* Glassmorphism Elements required in addition to the code */
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 0;
+            padding: 40px 20px;
         }
 
-        .card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border-radius: 20px;
+        /* Glassmorphism Cards */
+        .glass-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 40px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        header {
-            text-align: center;
-            margin-bottom: 50px;
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px -10px rgba(0, 242, 254, 0.3);
         }
 
-        h1 {
-            font-size: 3rem;
+        /* Hero Section */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(to right, var(--secondary), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             margin-bottom: 10px;
-            color: #fca311;
         }
 
-        h2 {
+        .hero-text h2 {
             font-size: 1.5rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
             letter-spacing: 2px;
-            text-transform: uppercase;
         }
 
-        .metrics {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
+        .hero-image img {
+            width: 100%;
+            border-radius: 24px;
+            border: 2px solid rgba(255,255,255,0.1);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        /* Metrics Grid */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
             text-align: center;
         }
 
-        .metric-box {
-            margin: 10px;
+        .metric-item {
+            padding: 20px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .metric-item i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 10px;
         }
 
         .metric-value {
             font-size: 2.5rem;
-            font-weight: bold;
-            color: #e94560;
+            font-weight: 800;
+            color: #fff;
         }
 
-        .grid-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        /* Section Headers */
+        .section-header {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
             gap: 15px;
-            list-style: none;
-            padding: 0;
         }
 
-        .grid-list li {
-            background: rgba(0, 0, 0, 0.2);
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 4px solid #fca311;
+        .section-header i {
+            color: var(--primary);
         }
 
-        a {
-            color: #fca311;
-            text-decoration: none;
+        /* Portfolio Grid */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .portfolio-card {
+            background: rgba(0,0,0,0.2);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .portfolio-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .portfolio-content {
+            padding: 20px;
+        }
+
+        /* Tags */
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .tag {
+            background: rgba(79, 172, 254, 0.1);
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(79, 172, 254, 0.2);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-text h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <!-- Header Section -->
-    <header class="card">
-        <h1>Priyadharshini L.</h1>
-        <h2>Professional SOCIAL MEDIA MANAGER[cite: 1]</h2>
-        <p>GROW YOUR BRAND ON SOCIAL MEDIA[cite: 1]</p>
-        <p>Coimbatore, Tamil Nadu | Fluent in English & Tamil Content Strategy</p>
-        <p><a href="mailto:priyadharshini@gmail.com">priyadharshini@gmail.com[cite: 1]</a> | +91 123456789[cite: 1]</p>
+    
+    <!-- Hero Section -->
+    <header class="glass-card hero">
+        <div class="hero-text">
+            <h1>Priyadharshini L.</h1>
+            <h2>Professional SOCIAL MEDIA MANAGER[cite: 1]</h2>
+            <p>I'm a Social Media Executive with 2+ years of experience.[cite: 2] I focus on Content Strategy, Campaign execution and creating platform Specific content that connects with audiences.[cite: 2]</p>
+            <div class="tag-container" style="margin-top: 30px;">
+                <span class="tag"><i class="fas fa-envelope"></i> priyadharshini@gmail.com[cite: 1]</span>
+                <span class="tag"><i class="fas fa-phone"></i> +91 123456789[cite: 1]</span>
+                <span class="tag"><i class="fas fa-rocket"></i> GROW YOUR BRAND ON SOCIAL MEDIA[cite: 1]</span>
+            </div>
+        </div>
+        <div class="hero-image">
+            <!-- Relevant Unsplash Image for Social Media/Workspace -->
+            <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1000&auto=format&fit=crop" alt="Social Media Management Workspace">
+        </div>
     </header>
 
-    <!-- About Me Section -->
-    <section class="card">
-        <h2>ABOUT ME[cite: 2]</h2>
-        <p>I'm a Social Media Executive with 2+ years of experience.[cite: 2] I focus on Content Strategy, Campaign execution and creating platform Specific content that connects with audiences.[cite: 2]</p>
-        
-        <div class="metrics">
-            <div class="metric-box">
+    <!-- Impact & Metrics -->
+    <section class="glass-card">
+        <h3 class="section-header"><i class="fas fa-chart-line"></i> The Impact</h3>
+        <div class="metrics-grid">
+            <div class="metric-item">
+                <i class="fas fa-eye"></i>
                 <div class="metric-value">5M+</div>
                 <div>Views[cite: 2]</div>
             </div>
-            <div class="metric-box">
+            <div class="metric-item">
+                <i class="fas fa-users"></i>
                 <div class="metric-value">100K+</div>
                 <div>Subscribers[cite: 2]</div>
             </div>
-            <div class="metric-box">
+            <div class="metric-item">
+                <i class="fas fa-bullseye"></i>
                 <div class="metric-value">8,000+</div>
                 <div>Leads Generated[cite: 2]</div>
             </div>
-            <div class="metric-box">
+            <div class="metric-item">
+                <i class="fas fa-network-wired"></i>
                 <div class="metric-value">8+</div>
                 <div>Channels Handled[cite: 2]</div>
             </div>
         </div>
     </section>
 
-    <!-- YouTube Growth & Experience Section -->
-    <section class="card">
-        <h2>YouTube Growth & Profile Optimization</h2>
-        <p><strong>Xylem NEET Tamil:</strong> Optimized bio, Keywords, and Layout to strengthen brand visibility and clarity.[cite: 6]</p>
-        <ul class="grid-list">
-            <li>Organic Growth in Just 6 months - Build From Scratch[cite: 9, 10]</li>
-            <li>Generated 1,569,156 views in the last 28 days[cite: 9, 10]</li>
-            <li>Secured 9.8K watch time hours and +949 subscribers in a 28-day period[cite: 9, 10]</li>
-            <li>Managed multi-channel content calendars, including webinars and events[cite: 7]</li>
-        </ul>
+    <!-- Portfolio Highlights -->
+    <section class="glass-card">
+        <h3 class="section-header"><i class="fas fa-fire"></i> YouTube Growth & Projects</h3>
+        <div class="portfolio-grid">
+            
+            <!-- Card 1 -->
+            <div class="portfolio-card">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop" alt="Data Analytics">
+                <div class="portfolio-content">
+                    <h4>Organic Channel Growth</h4>
+                    <p>Organic Growth in Just 6 months - Build From Scratch[cite: 9, 10]</p>
+                    <ul style="margin-top: 10px; padding-left: 20px; color: var(--text-muted);">
+                        <li>1,569,156 views in the last 28 days[cite: 9, 10]</li>
+                        <li>9.8K watch time hours and +949 subscribers[cite: 9, 10]</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="portfolio-card">
+                <img src="https://images.unsplash.com/photo-1616469829581-73993eb86b02?q=80&w=1000&auto=format&fit=crop" alt="Profile Optimization">
+                <div class="portfolio-content">
+                    <h4>Brand Optimization</h4>
+                    <p><strong>Xylem NEET Tamil:</strong> Optimized bio, Keywords, and Layout to strengthen brand visibility and clarity.[cite: 6]</p>
+                    <p style="margin-top: 10px;">Managed multi-channel content calendars, including webinars and events.[cite: 7]</p>
+                </div>
+            </div>
+
+        </div>
     </section>
 
-    <!-- Skills Section -->
-    <section class="card">
-        <h2>WHAT I HANDLE[cite: 3]</h2>
-        <ul class="grid-list">
-            <li>Profile & Highlight Optimisation[cite: 3]</li>
-            <li>Social Media strategy Development[cite: 3]</li>
-            <li>Hashtag Research & captions[cite: 3]</li>
-            <li>Content Calender Planning & scheduling[cite: 3]</li>
-            <li>Campaign Execution Support[cite: 3]</li>
-            <li>Graphic Designing & Leveraging Ai[cite: 3]</li>
-            <li>Analytics & Reporting[cite: 3]</li>
-            <li>Community Engagement & Moderation[cite: 3]</li>
-        </ul>
+    <!-- Expertise & Skills -->
+    <section class="glass-card">
+        <h3 class="section-header"><i class="fas fa-laptop-code"></i> Core Competencies</h3>
+        
+        <h4 style="margin-bottom: 15px; color: var(--primary);">WHAT I HANDLE[cite: 3]</h4>
+        <div class="tag-container" style="margin-bottom: 30px;">
+            <span class="tag">Profile & Highlight Optimisation[cite: 3]</span>
+            <span class="tag">Social Media strategy Development[cite: 3]</span>
+            <span class="tag">Hashtag Research & captions[cite: 3]</span>
+            <span class="tag">Content Calender Planning & scheduling[cite: 3]</span>
+            <span class="tag">Campaign Execution Support[cite: 3]</span>
+            <span class="tag">Graphic Designing & Leveraging Ai[cite: 3]</span>
+            <span class="tag">Analytics & Reporting[cite: 3]</span>
+            <span class="tag">Community Engagement & Moderation[cite: 3]</span>
+        </div>
+
+        <h4 style="margin-bottom: 15px; color: var(--primary);">Soft Skills & Software</h4>
+        <div class="tag-container">
+            <span class="tag"><i class="fas fa-check"></i> Strong Communication Skills[cite: 5]</span>
+            <span class="tag"><i class="fas fa-check"></i> Creative & Strategic Thinking[cite: 5]</span>
+            <span class="tag"><i class="fas fa-check"></i> Adaptability to Trends[cite: 5]</span>
+            <span class="tag"><i class="fas fa-check"></i> Client Handling & Coordination[cite: 5]</span>
+            <span class="tag"><i class="fas fa-check"></i> Time & Deadline Management[cite: 5]</span>
+            <span class="tag"><i class="fas fa-check"></i> Problem - Solving Mindset[cite: 5]</span>
+            <span class="tag" style="background: rgba(255, 255, 255, 0.1);"><i class="fas fa-tools"></i> Canva[cite: 18]</span>
+            <span class="tag" style="background: rgba(255, 255, 255, 0.1);"><i class="fas fa-tools"></i> Hootsuite[cite: 18]</span>
+        </div>
     </section>
 
-    <!-- Soft Skills & Software Section -->
-    <section class="card">
-        <h2>Soft Skills & Software</h2>
-        <ul class="grid-list">
-            <li><strong>Soft Skills:</strong> Strong Communication Skills, Creative & Strategic Thinking, Adaptability to Trends, Client Handling & Coordination, Time & Deadline Management, Problem - Solving Mindset.[cite: 5]</li>
-            <li><strong>Software & Tools:</strong> Canva, Hootsuite.[cite: 18]</li>
-        </ul>
-    </section>
 </div>
 
 </body>
