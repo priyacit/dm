@@ -3,181 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Priyadharshini L. | Social Media Manager</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-color: #0b0f19;
-            --card-bg: rgba(255, 255, 255, 0.03);
-            --card-border: rgba(255, 255, 255, 0.08);
-            --accent: #ff6b6b;
-            --accent-glow: rgba(255, 107, 107, 0.4);
-            --text-main: #ffffff;
-            --text-muted: #a0aec0;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Outfit', sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            background-image: 
-                radial-gradient(at 0% 0%, rgba(255, 107, 107, 0.15) 0px, transparent 50%),
-                radial-gradient(at 100% 0%, rgba(72, 61, 139, 0.25) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(255, 107, 107, 0.15) 0px, transparent 50%);
-            color: var(--text-main);
-            line-height: 1.6;
-            min-height: 100vh;
-            padding: 2rem;
-            display: flex;
-            justify-content: center;
-        }
-
-        .bento-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-auto-rows: minmax(200px, auto);
-            gap: 1.5rem;
-            max-width: 1200px;
-            width: 100%;
-        }
-
-        .card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 24px;
-            padding: 2rem;
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter:```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Priyadharshini L. | Digital Marketing & Social Media Manager</title>
-    <link href="[https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap](https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap)" rel="stylesheet">
-    <link rel="stylesheet" href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css)">
+    <title>Priyadharshini L. | Digital Growth Specialist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary: #fca311;
-            --bg-dark: #14213d;
-            --bg-light: #e5e5e5;
             --text-light: #ffffff;
-            --text-dark: #000000;
+            --text-muted: #b3b3b3;
             --glass-bg: rgba(255, 255, 255, 0.05);
             --glass-border: rgba(255, 255, 255, 0.1);
+            
+            /* Section Colors */
+            --bg-hero: linear-gradient(135deg, #0b0f19 0%, #1a1025 100%);
+            --bg-youtube: linear-gradient(135deg, #280003 0%, #1a0002 100%);
+            --bg-social: linear-gradient(135deg, #021124 0%, #010812 100%);
+            --bg-creative: linear-gradient(135deg, #1f0b2e 0%, #0f0517 100%);
+            --bg-experience: linear-gradient(135deg, #0a192f 0%, #020c1b 100%);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
         }
 
         body {
-            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            font-family: 'Outfit', sans-serif;
             color: var(--text-light);
             line-height: 1.6;
-            min-height: 100vh;
             overflow-x: hidden;
+            background-color: #0b0f19;
+        }
+
+        h1, h2, h3, .stat-number {
+            font-family: 'Space Grotesk', sans-serif;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1300px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 80px 20px;
         }
 
-        /* Glassmorphism Card Style */
-        .glass-panel {
+        /* Animations */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 15px rgba(252, 163, 17, 0.2); }
+            50% { box-shadow: 0 0 30px rgba(252, 163, 17, 0.6); }
+            100% { box-shadow: 0 0 15px rgba(252, 163, 17, 0.2); }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Glass Cards */
+        .glass-card {
             background: var(--glass-bg);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border: 1px solid var(--glass-border);
-            border-radius: 24px;
-            padding: 40px;
-            margin-bottom: 40px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease;
+            border-radius: 20px;
+            padding: 30px;
+            transition: transform 0.4s ease, border-color 0.4s ease;
         }
 
-        .glass-panel:hover {
-            transform: translateY(-5px);
+        .glass-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: var(--primary);
+        }
+
+        /* Section Styling */
+        section {
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: inline-block;
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 10px;
         }
 
         /* Hero Section */
-        .hero {
+        #hero {
+            background: var(--bg-hero);
+            min-height: 100vh;
             display: flex;
             align-items: center;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
-
-        .hero-img-container {
-            flex: 1;
-            min-width: 250px;
-            max-width: 300px;
             position: relative;
-        }
-
-        .hero-img {
-            width: 100%;
-            border-radius: 50%;
-            border: 4px solid var(--primary);
-            box-shadow: 0 0 20px rgba(252, 163, 17, 0.4);
-            object-fit: cover;
-            aspect-ratio: 1/1;
+            overflow: hidden;
         }
 
         .hero-content {
-            flex: 2;
-            min-width: 300px;
+            text-align: center;
+            z-index: 2;
         }
 
-        h1 {
-            font-size: 3.5rem;
-            line-height: 1.2;
-            margin-bottom: 10px;
-            background: linear-gradient(to right, #fca311, #ffecd2);
+        .hero-content h1 {
+            font-size: 4.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #fff, var(--primary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            animation: float 6s ease-in-out infinite;
         }
 
-        h2 {
-            font-size: 1.5rem;
-            font-weight: 300;
-            color: #a3b1c6;
-            margin-bottom: 20px;
-        }
-
-        .contact-links {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-
-        .contact-links a {
-            color: var(--text-light);
-            text-decoration: none;
-            background: rgba(252, 163, 17, 0.2);
-            padding: 10px 20px;
-            border-radius: 30px;
-            border: 1px solid var(--primary);
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .contact-links a:hover {
-            background: var(--primary);
-            color: var(--bg-dark);
+        .hero-content h3 {
+            font-size: 1.8rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
         }
 
         /* Stats Grid */
@@ -185,215 +142,314 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
-            text-align: center;
+            margin-top: 40px;
         }
 
         .stat-card {
-            background: rgba(0, 0, 0, 0.2);
+            text-align: center;
             padding: 30px;
-            border-radius: 16px;
-            border-bottom: 3px solid var(--primary);
+            border-radius: 15px;
+            background: rgba(0,0,0,0.4);
+            animation: pulse-glow 4s infinite;
         }
 
         .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
+            font-size: 3rem;
             color: var(--primary);
+            font-weight: 700;
         }
 
-        /* Skills & Expertise Grid */
-        .skills-container {
+        /* YouTube Growth Section */
+        #youtube {
+            background: var(--bg-youtube);
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .yt-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
 
-        .skill-list {
+        .yt-feature ul {
             list-style: none;
+            margin-top: 20px;
         }
 
-        .skill-list li {
+        .yt-feature li {
             margin-bottom: 15px;
             display: flex;
-            align-items: center;
-            gap: 10px;
+            align-items: flex-start;
+            gap: 15px;
         }
 
-        .skill-list i {
+        .yt-feature i {
+            color: #ff0000;
+            font-size: 1.5rem;
+            margin-top: 3px;
+        }
+
+        /* Other Social Media & Influencer Section */
+        #social {
+            background: var(--bg-social);
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .social-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .tag {
+            background: rgba(252, 163, 17, 0.1);
             color: var(--primary);
-            font-size: 1.2rem;
+            padding: 10px 20px;
+            border-radius: 30px;
+            border: 1px solid var(--primary);
+            font-weight: 600;
         }
 
-        /* Visual Portfolio Grid */
+        /* Graphic Design Section */
+        #creative {
+            background: var(--bg-creative);
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
         }
 
         .portfolio-item {
             position: relative;
-            border-radius: 16px;
+            border-radius: 12px;
             overflow: hidden;
             aspect-ratio: 16/9;
-            group: hover;
+            background: #2a2a2a;
         }
 
         .portfolio-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
         .portfolio-item:hover img {
-            transform: scale(1.1);
+            transform: scale(1.15);
         }
 
         .portfolio-overlay {
             position: absolute;
             bottom: 0;
             left: 0;
-            right: 0;
+            width: 100%;
             background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
             padding: 20px;
             transform: translateY(100%);
-            transition: transform 0.3s ease;
+            transition: transform 0.4s ease;
         }
 
         .portfolio-item:hover .portfolio-overlay {
             transform: translateY(0);
         }
-        
-        .section-title {
-            font-size: 2rem;
-            margin-bottom: 30px;
-            border-left: 5px solid var(--primary);
-            padding-left: 15px;
+
+        /* Floating elements background */
+        .bg-shapes {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            overflow: hidden;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .shape {
+            position: absolute;
+            background: rgba(255,255,255,0.02);
+            border-radius: 50%;
+            animation: float 10s infinite linear;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <!-- Hero Profile Section -->
-    <header class="glass-panel hero">
-        <div class="hero-img-container">
-            <!-- Placeholder for a professional headshot or creative portrait -->
-            <img src="[https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80](https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80)" alt="Priyadharshini Profile" class="hero-img">
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="bg-shapes">
+            <div class="shape" style="width: 300px; height: 300px; top: -10%; left: -10%;"></div>
+            <div class="shape" style="width: 500px; height: 500px; bottom: -20%; right: -10%; background: rgba(252, 163, 17, 0.03);"></div>
         </div>
-        <div class="hero-content">
+        <div class="container hero-content reveal">
             <h1>Priyadharshini L.</h1>
-            <h2>Digital Marketing & Social Media Professional</h2>
-            <p>Based in Coimbatore, India. Bilingual content strategist (English & Tamil) specializing in YouTube channel growth, performance marketing, and high-conversion graphic design. As a digital media specialist with over two years in the industry, my expertise lies in developing targeted content strategies and executing campaigns tailored to distinct online platforms.</p>
-            <div class="contact-links">
-                <a href="mailto:priyadharshini@gmail.com"><i class="fas fa-envelope"></i> Email Me</a>
-                <a href="tel:+91123456789"><i class="fas fa-phone"></i> +91 123456789</a>
-                <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
-            </div>
-        </div>
-    </header>
-
-    <!-- Impact & Metrics Section -->
-    <section class="glass-panel">
-        <h3 class="section-title">Career Impact</h3>
-        <p style="margin-bottom: 20px;">My portfolio includes managing more than eight digital channels, resulting in over five million content views, surpassing a hundred thousand channel subscriptions, and capturing thousands of potential client leads.</p>
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-number">5M+</div>
-                <div>Total Views</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">100K+</div>
-                <div>Subscribers Gained</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">8,000+</div>
-                <div>Leads Generated</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">4,000+</div>
-                <div>Subs in 6 Months (Zero to 4k)</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Professional Experience Section -->
-    <section class="glass-panel">
-        <h3 class="section-title">Professional Experience</h3>
-        <div class="skills-container">
-            <div>
-                <h4 style="color: var(--primary); margin-bottom: 10px; font-size: 1.2rem;">Xylem Learning Pvt Ltd</h4>
-                <p><em>Social Media Manager (Feb 2026 - Present)</em></p>
-                <p>Directing overarching channel strategies, optimizing video discoverability, and orchestrating extensive promotional efforts. Executed localized content strategies and translated complex educational materials between English, Tamil, and Malayalam.</p>
-            </div>
-            <div>
-                <h4 style="color: var(--primary); margin-bottom: 10px; font-size: 1.2rem;">iCliniq</h4>
-                <p><em>Digital Marketing Executive (Sep 2024 - Nov 2025)</em></p>
-                <p>Managed end-to-end multi-channel content deployment, executed graphic design workflows, and maintained robust community engagement across digital touchpoints.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Core Competencies Section -->
-    <section class="glass-panel">
-        <h3 class="section-title">Core Competencies</h3>
-        <div class="skills-container">
-            <div>
-                <h4 style="margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 10px;">Strategic Operations</h4>
-                <ul class="skill-list">
-                    <li><i class="fas fa-check-circle"></i> Profile audits and visual rebranding</li>
-                    <li><i class="fas fa-check-circle"></i> Meta Ads & Google Ads Performance Scaling</li>
-                    <li><i class="fas fa-check-circle"></i> WhatsAppWorld Lead Communication</li>
-                    <li><i class="fas fa-check-circle"></i> Comprehensive calendar mapping and automated publishing</li>
-                </ul>
-            </div>
-            <div>
-                <h4 style="margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 10px;">Creative & Analytics</h4>
-                <ul class="skill-list">
-                    <li><i class="fas fa-check-circle"></i> Ghibli-Style Art & Video Face Replacements</li>
-                    <li><i class="fas fa-check-circle"></i> AI-integrated visual design using Canva</li>
-                    <li><i class="fas fa-check-circle"></i> Tracking performance metrics via Google Analytics 4</li>
-                    <li><i class="fas fa-check-circle"></i> Deep-dive reporting and community moderation</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Visual Work / Campaigns Section -->
-    <section class="glass-panel">
-        <h3 class="section-title">Featured Campaigns & Graphic Design</h3>
-        <p>A showcase of high-CTR thumbnails, educational banners, and promotional content. Utilizing organic discovery methodologies, one channel experienced significant traction, accruing over 1.5 million impressions and elevated retention rates over a single month.</p>
-        
-        <div class="portfolio-grid">
-            <!-- Portfolio Item 1 -->
-            <div class="portfolio-item">
-                <img src="[https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80](https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80)" alt="Social Media Strategy">
-                <div class="portfolio-overlay">
-                    <h4>Channel Optimization</h4>
-                    <p>Revamped visual architecture and metadata for organic reach.</p>
+            <h3>Professional Social Media Manager[cite: 1]</h3>
+            <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto; color: var(--text-muted);">
+                Bilingual (English & Tamil) content strategist specializing in YouTube channel growth, performance marketing, influencer coordination, and high-CTR graphic design.
+            </p>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">5M+</div>
+                    <div>Views[cite: 2]</div>
                 </div>
-            </div>
-            <!-- Portfolio Item 2 -->
-            <div class="portfolio-item">
-                <img src="[https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80](https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80)" alt="Analytics Dashboard">
-                <div class="portfolio-overlay">
-                    <h4>Performance Analytics</h4>
-                    <p>Monitoring GA4, watch hours, and scaling paid lead generation.</p>
+                <div class="stat-card">
+                    <div class="stat-number">100K+</div>
+                    <div>Subscribers[cite: 2]</div>
                 </div>
-            </div>
-            <!-- Portfolio Item 3 -->
-            <div class="portfolio-item">
-                <img src="[https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80](https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80)" alt="Graphic Design">
-                <div class="portfolio-overlay">
-                    <h4>Custom Thumbnails & Graphics</h4>
-                    <p>Newspaper-style Tamil promos, animated overlays, and AI designs.</p>
+                <div class="stat-card">
+                    <div class="stat-number">8,000+</div>
+                    <div>Leads Generated[cite: 2]</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">8+</div>
+                    <div>Channels Handled[cite: 2]</div>
                 </div>
             </div>
         </div>
     </section>
-</div>
 
+    <!-- YouTube Growth Mastery -->
+    <section id="youtube">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>YouTube Growth Mastery</h2>
+                <p>Organic Growth in Just 6 months - Build From Scratch[cite: 9, 10]</p>
+            </div>
+            
+            <div class="yt-grid">
+                <div class="glass-card reveal yt-feature">
+                    <h3><i class="fab fa-youtube"></i> Xylem NEET Pro Tamil</h3>
+                    <ul>
+                        <li><i class="fas fa-chart-line"></i> <strong>1,569,156 views</strong> achieved in the last 28 days[cite: 9, 10].</li>
+                        <li><i class="fas fa-clock"></i> <strong>9.8K watch time hours</strong> generated in a single 28-day period[cite: 9, 10].</li>
+                        <li><i class="fas fa-users"></i> Secured <strong>+949 new subscribers</strong> in 28 days, contributing to the 10.5K total[cite: 6, 9, 10].</li>
+                    </ul>
+                </div>
+
+                <div class="glass-card reveal yt-feature">
+                    <h3><i class="fas fa-cogs"></i> SEO & Channel Strategy</h3>
+                    <ul>
+                        <li><i class="fas fa-search"></i> Conducting <strong>keyword research</strong> for video optimization and writing SEO-friendly titles, descriptions, and tags[cite: 10].</li>
+                        <li><i class="fas fa-image"></i> Supporting <strong>thumbnail planning</strong> for better click-through rate, leading to x15 times improved live views[cite: 10, 13].</li>
+                        <li><i class="fas fa-calendar-alt"></i> Managing channel content and <strong>publishing schedules</strong> while tracking content performance to improve audience reach[cite: 10].</li>
+                    </ul>
+                </div>
+
+                <div class="glass-card reveal yt-feature">
+                    <h3><i class="fas fa-network-wired"></i> Multi-Channel Expansion</h3>
+                    <ul>
+                        <li><i class="fas fa-book"></i> <strong>Tamil 10 CBSE:</strong> Generated 273,710 views and 26.5K watch hours over 90 days[cite: 11].</li>
+                        <li><i class="fas fa-graduation-cap"></i> <strong>Tamil 11 & 12 CBSE:</strong> Secured 58,709 views and 4.0K watch hours in 90 days[cite: 11].</li>
+                        <li><i class="fas fa-video"></i> Integrated different YouTube channels, webinars, events, and polls into a cohesive <strong>Content Calendar</strong>[cite: 7].</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Multi-Platform & Influencer Marketing -->
+    <section id="social">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Multi-Platform Strategy & Operations</h2>
+            </div>
+
+            <div class="yt-grid">
+                <div class="glass-card reveal">
+                    <h3><i class="fab fa-instagram" style="color: #E1306C;"></i> Instagram & Profile Optimization</h3>
+                    <p style="margin-top: 15px;"><strong>Profile Optimization:</strong> Optimized bio, Keywords, and Layout to strengthen brand visibility and clarity[cite: 6].</p>
+                    <p style="margin-top: 10px;"><strong>Story Highlights:</strong> Designed and organized story highlights to showcase key services and information[cite: 6].</p>
+                    <div class="social-tags">
+                        <span class="tag">Hashtag Research</span>
+                        <span class="tag">Content Scheduling</span>
+                        <span class="tag">Community Engagement</span>
+                    </div>
+                </div>
+
+                <div class="glass-card reveal">
+                    <h3><i class="fas fa-handshake" style="color: var(--primary);"></i> Influencer Marketing & Budgeting</h3>
+                    <p style="margin-top: 15px;">Managed end-to-end influencer campaigns targeting the Kongu belt region[cite: 8]. Workflow included:</p>
+                    <ul style="margin-top: 10px; margin-left: 20px;">
+                        <li>Influencer Selection & Contacting[cite: 8]</li>
+                        <li>Budget negotiation & finalization[cite: 8]</li>
+                        <li>Content Delivery, Correction & Collaboration coordination[cite: 8]</li>
+                    </ul>
+                </div>
+
+                <div class="glass-card reveal">
+                    <h3><i class="fas fa-laptop-code" style="color: #4CAF50;"></i> Core Competencies & Software</h3>
+                    <div class="social-tags">
+                        <span class="tag">Canva[cite: 18]</span>
+                        <span class="tag">Hootsuite[cite: 18]</span>
+                        <span class="tag">Meta & Google Ads</span>
+                        <span class="tag">Analytics & Reporting[cite: 3]</span>
+                        <span class="tag">AI Leveraging[cite: 3]</span>
+                        <span class="tag">Client Handling[cite: 5]</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Creative & Graphic Design -->
+    <section id="creative">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Graphic Design & Visual Identity</h2>
+                <p>Thumbnails, Promotional Campaigns & AI Design[cite: 3]</p>
+            </div>
+
+            <div class="portfolio-grid">
+                <div class="portfolio-item reveal">
+                    <!-- Placeholder representing "Reality VS Expectation" thumbnail -->
+                    <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Thumbnail Design">
+                    <div class="portfolio-overlay">
+                        <h4>High-CTR Thumbnails</h4>
+                        <p>Designed compelling educational thumbnails (e.g., "Reality vs Expectation", "Bioquest")[cite: 15].</p>
+                    </div>
+                </div>
+                <div class="portfolio-item reveal">
+                    <!-- Placeholder representing event/award graphics -->
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Campaign Graphic">
+                    <div class="portfolio-overlay">
+                        <h4>Promotional Campaigns</h4>
+                        <p>Created graphics for Xylem Excellence Awards, NEAT Mock Exams, and Mother's Day[cite: 16].</p>
+                    </div>
+                </div>
+                <div class="portfolio-item reveal">
+                    <!-- Placeholder representing visual localization -->
+                    <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Design Automation">
+                    <div class="portfolio-overlay">
+                        <h4>Visual Branding</h4>
+                        <p>Leveraged AI for background modifications, Ghibli-style artwork, and dynamic image animation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scroll Reveal Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.reveal');
+
+            const revealOnScroll = () => {
+                const windowHeight = window.innerHeight;
+                const elementVisible = 100;
+
+                reveals.forEach((reveal) => {
+                    const elementTop = reveal.getBoundingClientRect().top;
+                    if (elementTop < windowHeight - elementVisible) {
+                        reveal.classList.add('active');
+                    }
+                });
+            };
+
+            window.addEventListener('scroll', revealOnScroll);
+            revealOnScroll(); // Trigger on load
+        });
+    </script>
 </body>
 </html>
