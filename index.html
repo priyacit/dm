@@ -3,375 +3,474 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Priyadharshini L. | Professional Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Priyadharshini L. | Digital Marketing Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bg-color: #e2e8f0;
-            --doc-bg: #ffffff;
-            --text-main: #0f172a;
-            --text-muted: #475569;
-            --accent: #2563eb;
-            --border-color: #cbd5e1;
+            --primary: #3b82f6;
+            --primary-light: #60a5fa;
+            --secondary: #10b981;
+            --accent: #f59e0b;
+            --text-main: #ffffff;
+            --text-muted: #94a3b8;
+            --glass-bg: rgba(15, 23, 42, 0.6);
+            --glass-border: rgba(255, 255, 255, 0.1);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.6;
-            padding: 2rem 1rem;
+            /* Visually Appealing Animated Background */
+            background: linear-gradient(-45deg, #0f172a, #1e1b4b, #0f2b46, #170f2e);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            min-height: 100vh;
+            padding: 2rem;
             display: flex;
             justify-content: center;
         }
 
-        /* Document Style Wrapper - Simulates an A4/Print Portfolio */
-        .portfolio-document {
-            background: var(--doc-bg);
-            width: 100%;
-            max-width: 900px;
-            padding: 4rem;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            border-top: 8px solid var(--accent);
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
-        /* Typography */
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            color: var(--text-main);
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
+        .portfolio-container {
+            max-width: 1100px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        /* Glassmorphism Card Style */
+        .glass-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
         }
 
         h2 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--accent);
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 0.5rem;
-            margin: 2rem 0 1rem 0;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2 i {
+            color: var(--primary-light);
         }
 
         h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 0.25rem;
+            font-size: 1.2rem;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
         }
 
         p {
-            font-size: 0.95rem;
             color: var(--text-muted);
             margin-bottom: 1rem;
+            font-size: 1rem;
         }
 
-        .subtitle {
-            font-size: 1.1rem;
+        /* Hero Section */
+        .hero {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .hero-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--glass-border);
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
+        }
+
+        .hero-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.25rem;
+            color: var(--primary-light);
             font-weight: 500;
-            color: var(--text-muted);
             margin-bottom: 1.5rem;
         }
 
-        /* Contact Info Header */
-        .contact-info {
+        .contact-links {
             display: flex;
             flex-wrap: wrap;
-            gap: 1.5rem;
-            font-size: 0.9rem;
-            color: var(--text-main);
-            margin-bottom: 2rem;
+            gap: 1rem;
         }
 
-        .contact-info a {
+        .contact-links a, .contact-links span {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            border: 1px solid var(--glass-border);
             color: var(--text-main);
             text-decoration: none;
+            font-size: 0.9rem;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-links a:hover {
+            background: var(--primary);
+            border-color: var(--primary);
         }
 
         /* Metrics Grid */
         .metrics-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 1.5rem;
-            margin: 1.5rem 0;
         }
 
-        .metric-box {
-            background: #f8fafc;
-            border: 1px solid var(--border-color);
+        .metric-card {
+            background: rgba(0, 0, 0, 0.2);
             padding: 1.5rem;
+            border-radius: 15px;
             text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-light);
         }
 
         .metric-value {
-            font-size: 1.75rem;
+            font-size: 2.25rem;
             font-weight: 700;
-            color: var(--accent);
+            color: var(--text-main);
             margin-bottom: 0.25rem;
+            background: linear-gradient(to right, #60a5fa, #34d399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .metric-label {
             font-size: 0.85rem;
-            font-weight: 500;
+            font-weight: 600;
             color: var(--text-muted);
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        /* Experience Section */
-        .experience-item {
-            margin-bottom: 1.5rem;
-        }
-
-        .experience-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 0.5rem;
-        }
-
-        .company-name {
-            font-weight: 500;
-            color: var(--text-main);
-            font-style: italic;
-        }
-
-        .date-range {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            font-weight: 500;
-        }
-
-        ul.professional-list {
-            list-style-type: none;
-            padding-left: 0;
-        }
-
-        ul.professional-list li {
-            position: relative;
-            padding-left: 1.25rem;
-            margin-bottom: 0.5rem;
-            font-size: 0.95rem;
-            color: var(--text-muted);
-        }
-
-        ul.professional-list li::before {
-            content: "•";
-            color: var(--accent);
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
-
-        /* Platforms & Skills Layout */
-        .grid-2-col {
+        /* Two Column Layouts */
+        .split-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
         }
 
-        /* Social Media Platforms Icons */
-        .platform-icons {
+        /* Experience Timeline */
+        .experience-item {
+            margin-bottom: 2rem;
+            padding-left: 1.5rem;
+            border-left: 2px solid var(--primary);
+            position: relative;
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            background: var(--primary);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--primary);
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 0.5rem;
+        }
+
+        .company { color: var(--primary-light); font-weight: 500; }
+        .date { font-size: 0.9rem; color: var(--accent); }
+        
+        ul.bullet-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        ul.bullet-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+        
+        ul.bullet-list li::before {
+            content: '\f105';
+            font-family: 'FontAwesome';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+        }
+
+        /* Image Showcase Grids */
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .showcase-card {
+            background: rgba(0,0,0,0.3);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+        }
+
+        .showcase-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--glass-border);
+            transition: transform 0.5s ease;
+        }
+        
+        .showcase-card:hover .showcase-img {
+            transform: scale(1.05);
+        }
+
+        .showcase-content {
+            padding: 1.5rem;
+            position: relative;
+            background: var(--glass-bg);
+            z-index: 2;
+        }
+
+        /* Skills Tags */
+        .tags-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .platform-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 45px;
-            height: 45px;
-            background: #f1f5f9;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            color: var(--text-main);
-            font-size: 1.25rem;
-            transition: all 0.2s;
-        }
-
-        .platform-icon:hover {
-            background: var(--accent);
-            color: white;
-            border-color: var(--accent);
-        }
-
-        /* Tags */
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
+            gap: 0.75rem;
         }
 
         .tag {
-            background: #f1f5f9;
-            color: var(--text-main);
-            padding: 0.25rem 0.75rem;
-            font-size: 0.85rem;
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
+        .tag i { color: var(--primary-light); }
+
         @media (max-width: 768px) {
-            .portfolio-document { padding: 2rem; }
-            .metrics-grid { grid-template-columns: 1fr; }
-            .grid-2-col { grid-template-columns: 1fr; }
-            .experience-header { flex-direction: column; }
+            .hero { text-align: center; justify-content: center; }
+            .split-grid { grid-template-columns: 1fr; }
+            .contact-links { justify-content: center; }
         }
     </style>
 </head>
 <body>
 
-    <div class="portfolio-document">
+    <div class="portfolio-container">
         
-        <!-- Header / Contact -->
-        <header>
-            <h1>PRIYADHARSHINI L[cite: 19]</h1>
-            <p class="subtitle">Digital Marketer | Social Media Specialist | SEO Strategist | Performance Marketer[cite: 19]</p>
-            
-            <div class="contact-info">
-                <a href="mailto:priyadharshini5775@gmail.com"><i class="fas fa-envelope"></i> priyadharshini5775@gmail.com[cite: 19]</a>
-                <a href="tel:+918778285483"><i class="fas fa-phone"></i> +91 8778285483[cite: 19]</a>
-                <span><i class="fas fa-map-marker-alt"></i> Coimbatore, Tamil Nadu[cite: 19]</span>
-                <a href="#"><i class="fab fa-linkedin"></i> LinkedIn[cite: 19]</a>
+        <!-- Hero Profile -->
+        <header class="glass-panel hero">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" alt="Priyadharshini Profile" class="hero-img">
+            <div class="hero-content">
+                <h1>PRIYADHARSHINI L[cite: 19]</h1>
+                <div class="subtitle">Digital Marketer | Social Media Specialist | SEO Strategist[cite: 19]</div>
+                <p>Digital Marketing Executive with 2+ years of experience in social media management, paid advertising, YouTube growth, and performance analytics[cite: 19]. Bilingual strategist (English, Tamil)[cite: 20] skilled at combining creative AI-assisted content with analytics-led decision-making to scale brand visibility[cite: 19].</p>
+                
+                <div class="contact-links">
+                    <a href="mailto:priyadharshini5775@gmail.com"><i class="fas fa-envelope"></i> priyadharshini5775@gmail.com[cite: 19]</a>
+                    <a href="tel:+918778285483"><i class="fas fa-phone"></i> +91 8778285483[cite: 19]</a>
+                    <span><i class="fas fa-map-marker-alt"></i> Coimbatore, Tamil Nadu[cite: 19]</span>
+                    <a href="#"><i class="fab fa-linkedin"></i> LinkedIn[cite: 19]</a>
+                </div>
             </div>
         </header>
 
-        <!-- Professional Summary -->
-        <section>
-            <h2>Professional Summary</h2>
-            <p>Digital Marketing Executive with 2+ years of experience in social media management, paid advertising (Meta & Google Ads), YouTube growth, and performance analytics[cite: 19]. Proven track record of growing a YouTube channel from scratch to 4,000+ subscribers in 6 months through data-driven content strategy and video SEO[cite: 19]. Skilled at combining creative content with analytics-led decision-making to improve brand visibility, engagement, and campaign performance across multiple platforms[cite: 19]. Bilingual in English and Tamil[cite: 20].</p>
-        </section>
-
-        <!-- Impact Metrics -->
-        <section>
+        <!-- Impact Metrics Grid -->
+        <section class="glass-panel">
+            <h2><i class="fas fa-chart-line"></i> Global Impact & Metrics</h2>
             <div class="metrics-grid">
-                <div class="metric-box">
+                <div class="metric-card">
                     <div class="metric-value">50M+</div>
                     <div class="metric-label">Cumulative Reach/Views[cite: 19]</div>
                 </div>
-                <div class="metric-box">
-                    <div class="metric-value">10,000+</div>
-                    <div class="metric-label">Organic Leads Generated[cite: 19]</div>
-                </div>
-                <div class="metric-box">
+                <div class="metric-card">
                     <div class="metric-value">320K+</div>
-                    <div class="metric-label">Followers Grown[cite: 19]</div>
+                    <div class="metric-label">Subscribers Grown[cite: 19]</div>
                 </div>
-                <div class="metric-box">
-                    <div class="metric-value">6</div>
-                    <div class="metric-label">Platforms Managed[cite: 19]</div>
+                <div class="metric-card">
+                    <div class="metric-value">10,000+</div>
+                    <div class="metric-label">Organic Leads Gen[cite: 19]</div>
                 </div>
-                <div class="metric-box">
-                    <div class="metric-value">30%+</div>
-                    <div class="metric-label">Faster Turnaround via AI[cite: 19]</div>
-                </div>
-                <div class="metric-box">
+                <div class="metric-card">
                     <div class="metric-value">250+</div>
                     <div class="metric-label">Creatives Published[cite: 19]</div>
                 </div>
+                <div class="metric-card">
+                    <div class="metric-value">30%+</div>
+                    <div class="metric-label">Faster Speed via AI[cite: 19]</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">6</div>
+                    <div class="metric-label">Platforms Managed[cite: 19]</div>
+                </div>
             </div>
         </section>
 
-        <!-- Professional Experience -->
-        <section>
-            <h2>Professional Experience</h2>
+        <!-- Case Studies & Achievements (Expanded with Images) -->
+        <section class="glass-panel">
+            <h2><i class="fas fa-trophy"></i> Key Case Studies & Growth Strategies</h2>
+            <div class="showcase-grid">
+                <!-- Case Study 1 -->
+                <div class="showcase-card">
+                    <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=600&q=80" alt="YouTube Analytics" class="showcase-img">
+                    <div class="showcase-content">
+                        <h3>Zero-to-4k YouTube Growth</h3>
+                        <p>Built a YouTube channel from scratch to 4,000+ subscribers in 6 months using aggressive content strategy, Video SEO, competitor analysis, and high-CTR thumbnail optimization[cite: 19].</p>
+                    </div>
+                </div>
+                <!-- Case Study 2 -->
+                <div class="showcase-card">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="Lead Generation" class="showcase-img">
+                    <div class="showcase-content">
+                        <h3>0-CAC Organic Lead Generation</h3>
+                        <p>Generated 10,000+ qualified leads strictly through organic content, SEO targeting, strong CTAs, and optimized content-to-lead nurturing workflows on WhatsApp and Telegram communities[cite: 19].</p>
+                    </div>
+                </div>
+                <!-- Case Study 3 -->
+                <div class="showcase-card">
+                    <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&w=600&q=80" alt="Network Leadership" class="showcase-img">
+                    <div class="showcase-content">
+                        <h3>5-Channel Network Leadership</h3>
+                        <p>Directed the Xylem Tamil 5-channel network (NEET & CBSE domains), orchestrating multi-platform content while coordinating cross-functional teams, teachers, and ad agencies[cite: 19].</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Experience & Portfolio Showcase -->
+        <div class="split-grid">
             
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div>
+            <section class="glass-panel">
+                <h2><i class="fas fa-briefcase"></i> Experience</h2>
+                
+                <div class="experience-item">
+                    <div class="exp-header">
                         <h3>Digital Marketing Executive[cite: 19]</h3>
-                        <span class="company-name">Xylem Learning Pvt. Ltd., Coimbatore[cite: 19]</span>
+                        <span class="date">Feb 2026 - Present[cite: 19]</span>
                     </div>
-                    <span class="date-range">Feb 2026 - Present[cite: 19]</span>
+                    <div class="company">Xylem Learning Pvt. Ltd., Coimbatore[cite: 19]</div>
+                    <ul class="bullet-list" style="margin-top: 10px;">
+                        <li>Manage end-to-end digital operations across Instagram, LinkedIn, Facebook, X, Pinterest, YouTube, Telegram, and WhatsApp[cite: 19].</li>
+                        <li>Plan and execute Google Ads and Meta Ads campaigns for lead generation using A/B testing and GA4 tracking[cite: 19].</li>
+                        <li>Led Influencer Marketing & Collaborations to expand brand reach and campaign visibility[cite: 19].</li>
+                        <li>Utilize AI tools/reusable prompts to streamline content creation, reducing turnaround time by 30%+[cite: 19].</li>
+                    </ul>
                 </div>
-                <ul class="professional-list">
-                    <li>Serve as the Digital Team Head for Xylem Tamil's 5-channel network—NEET Tamil, NEET Pro Tamil, CBSE 10, CBSE 11, and CBSE 12—leading teams and coordinating with ad agencies[cite: 19].</li>
-                    <li>Built and scaled a YouTube channel from scratch to 4,000+ subscribers within 6 months via strategic planning, Video SEO, keyword research, and thumbnail optimization[cite: 19].</li>
-                    <li>Planned and executed Google Ads and Meta Ads campaigns, tracking performance and conversions through Google Analytics 4 (GA4) using UTM tagging and A/B testing[cite: 19].</li>
-                    <li>Led WhatsApp marketing, lead-nurturing initiatives, and generated 10,000+ qualified organic leads with zero paid acquisition cost[cite: 19].</li>
-                    <li>Utilized AI tools and reusable prompts to streamline content creation, reducing turnaround time by 30%+ while maintaining quality[cite: 19].</li>
-                </ul>
-            </div>
 
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div>
+                <div class="experience-item">
+                    <div class="exp-header">
                         <h3>Social Media Executive[cite: 20]</h3>
-                        <span class="company-name">iCliniq, Coimbatore[cite: 20]</span>
+                        <span class="date">Sep 2024 - Nov 2025[cite: 20]</span>
                     </div>
-                    <span class="date-range">Sep 2024 - Nov 2025[cite: 20]</span>
-                </div>
-                <ul class="professional-list">
-                    <li>Managed end-to-end social media operations across Instagram, LinkedIn, Facebook, X (Twitter), Pinterest, and YouTube, ensuring consistent brand presence[cite: 20].</li>
-                    <li>Created social media creatives including posts, carousels, infographics, web stories, and promotional posters[cite: 20].</li>
-                    <li>Produced long-form and short-form content, including YouTube videos and Reels, to drive audience engagement and brand awareness[cite: 20].</li>
-                    <li>Planned and maintained monthly content calendars aligned with brand campaigns and marketing objectives[cite: 20].</li>
-                </ul>
-            </div>
-        </section>
-
-        <div class="grid-2-col">
-            <!-- Digital Platforms Managed -->
-            <section>
-                <h2>Platforms Managed</h2>
-                <p>Comprehensive end-to-end management, paid media execution, and organic community growth across major digital networks[cite: 19, 20].</p>
-                <div class="platform-icons">
-                    <div class="platform-icon" title="YouTube"><i class="fab fa-youtube"></i></div>
-                    <div class="platform-icon" title="Google Ads / Search"><i class="fab fa-google"></i></div>
-                    <div class="platform-icon" title="Meta (Facebook)"><i class="fab fa-facebook-f"></i></div>
-                    <div class="platform-icon" title="Instagram"><i class="fab fa-instagram"></i></div>
-                    <div class="platform-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></div>
-                    <div class="platform-icon" title="X (Twitter)"><i class="fab fa-x-twitter"></i></div>
-                    <div class="platform-icon" title="Pinterest"><i class="fab fa-pinterest-p"></i></div>
-                    <div class="platform-icon" title="WhatsApp Business"><i class="fab fa-whatsapp"></i></div>
-                    <div class="platform-icon" title="Telegram"><i class="fab fa-telegram-plane"></i></div>
+                    <div class="company">iCliniq, Coimbatore[cite: 20]</div>
+                    <ul class="bullet-list" style="margin-top: 10px;">
+                        <li>Maintained monthly content calendars aligned with audience interests and marketing objectives[cite: 20].</li>
+                        <li>Created social media creatives: posts, carousels, infographics, web stories, and banners[cite: 20].</li>
+                        <li>Produced long-form and short-form video content (YouTube/Reels) and customer success stories[cite: 20].</li>
+                    </ul>
                 </div>
             </section>
 
-            <!-- Tools & Software -->
-            <section>
-                <h2>Tools & AI Workflows</h2>
-                <div class="tags">
-                    <span class="tag">Google Analytics 4 (GA4)[cite: 20]</span>
-                    <span class="tag">Google Search Console[cite: 20]</span>
-                    <span class="tag">Meta Ads Manager[cite: 20]</span>
-                    <span class="tag">ChatGPT[cite: 20]</span>
-                    <span class="tag">Claude[cite: 20]</span>
-                    <span class="tag">Perplexity[cite: 20]</span>
-                    <span class="tag">Gemini[cite: 20]</span>
-                    <span class="tag">Midjourney[cite: 20]</span>
-                    <span class="tag">Canva[cite: 20]</span>
-                    <span class="tag">Adobe Premiere Pro[cite: 20]</span>
-                    <span class="tag">Adobe Photoshop[cite: 20]</span>
-                    <span class="tag">Sora & Veo 3[cite: 20]</span>
+            <section class="glass-panel">
+                <h2><i class="fas fa-palette"></i> Creative Portfolio</h2>
+                <div style="display: grid; grid-template-columns: 1fr; gap: 1rem;">
+                    <!-- Creative 1 -->
+                    <div class="showcase-card" style="display: flex; align-items: center; padding: 0.5rem; background: rgba(0,0,0,0.2);">
+                        <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=200&q=80" alt="Design" style="width: 120px; height: 120px; border-radius: 10px; object-fit: cover;">
+                        <div style="padding: 1rem;">
+                            <h4 style="color: var(--text-main);">Performance Creatives</h4>
+                            <p style="font-size: 0.85rem; margin-bottom: 0;">Designed infographics, high-CTR YouTube thumbnails, and web stories leveraging Canva & Adobe Suite[cite: 19, 20].</p>
+                        </div>
+                    </div>
+                    <!-- Creative 2 -->
+                    <div class="showcase-card" style="display: flex; align-items: center; padding: 0.5rem; background: rgba(0,0,0,0.2);">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=200&q=80" alt="Data Analytics" style="width: 120px; height: 120px; border-radius: 10px; object-fit: cover;">
+                        <div style="padding: 1rem;">
+                            <h4 style="color: var(--text-main);">Custom Analytics Dashboards</h4>
+                            <p style="font-size: 0.85rem; margin-bottom: 0;">Built performance dashboards tracking views, watch time, CTR, and hook performance across channels[cite: 19].</p>
+                        </div>
+                    </div>
+                    <!-- Education Add-on -->
+                    <div style="margin-top: 1rem; border-top: 1px solid var(--glass-border); padding-top: 1.5rem;">
+                        <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                        <p style="margin-bottom: 0; color: var(--text-main); font-weight: 500;">B.E., Computer Science and Engineering[cite: 20]</p>
+                        <p style="font-size: 0.9rem;">CIT - Coimbatore Institute of Technology | CGPA: 7.89[cite: 20]</p>
+                    </div>
                 </div>
             </section>
         </div>
 
-        <!-- Education -->
-        <section>
-            <h2>Education</h2>
-            <div class="experience-header" style="margin-bottom: 0;">
-                <div>
-                    <h3 style="color: var(--text-main);">B.E., Computer Science and Engineering[cite: 20]</h3>
-                    <span class="company-name">CIT - Coimbatore Institute of Technology[cite: 20]</span>
-                </div>
-                <span class="date-range" style="color: var(--text-main); font-weight: 700;">CGPA: 7.89[cite: 20]</span>
+        <!-- Tools, AI & Platforms Grid -->
+        <section class="glass-panel">
+            <h2><i class="fas fa-laptop-code"></i> AI Workflows, Tools & Platforms</h2>
+            <div class="tags-container">
+                <span class="tag"><i class="fab fa-google"></i> Google Ads / Search Console[cite: 19, 20]</span>
+                <span class="tag"><i class="fab fa-meta"></i> Meta Ads Manager[cite: 19, 20]</span>
+                <span class="tag"><i class="fas fa-chart-pie"></i> Google Analytics 4 (GA4)[cite: 19, 20]</span>
+                <span class="tag"><i class="fas fa-link"></i> UTM Tracking & A/B Testing[cite: 19, 20]</span>
+                <span class="tag"><i class="fas fa-robot"></i> ChatGPT / Claude / Gemini / Perplexity[cite: 20]</span>
+                <span class="tag"><i class="fas fa-video"></i> Sora / Veo 3 / RunwayML[cite: 20]</span>
+                <span class="tag"><i class="fas fa-paint-brush"></i> Midjourney / Freepik AI[cite: 20]</span>
+                <span class="tag"><i class="fas fa-bezier-curve"></i> Canva / Photoshop / Premiere Pro[cite: 20]</span>
+                <span class="tag"><i class="fab fa-youtube"></i> YouTube Studio[cite: 20]</span>
+                <span class="tag"><i class="fab fa-whatsapp"></i> WhatsApp Business[cite: 20]</span>
+                <span class="tag"><i class="fab fa-telegram"></i> Telegram[cite: 20]</span>
             </div>
         </section>
 
